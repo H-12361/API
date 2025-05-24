@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fech using fetch url</title>
+</head>
+<body>
+    
+    <script >
+        let url="https://catfact.ninja/fact";
+
+       fetch(url)
+       .then((Response)=>{console.log(Response);
+        return Response.json();  //use methord chaninig to fetch data into readable formate
+
+       })
+       .then((data)=>{
+        console.log(data.fact)
+       })
+       .catch((error)=>
+       {console.log("error");
+
+       });
+
+    </script>
+</body>
+</html>

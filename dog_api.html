@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog api  pratice</title>
+</head>
+<body>
+    <h1> click button to show the dog breed</h1>
+    <button id="btn"> click</button>
+    <img id="source" src="">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+      let btn = document.getElementById("btn");{
+        btn.addEventListener("click" , async ()=>{
+             let link= await getImage();
+             console.log(source);
+
+             let finallink=document.getElementById("source");
+             finallink.setAttribute("src", link);
+             
+
+        });
+       
+      
+
+      }
+      
+
+     // function
+        let url="https://dog.ceo/api/breeds/image/random";
+        async function getImage() {
+            try{
+                let res = await axios.get(url);
+                return res.data.message;
+            }
+            catch(err){
+
+                console.log("error is:" ,err);
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>

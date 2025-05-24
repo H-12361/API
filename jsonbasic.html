@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Jason irt1</title>
+</head>
+<body>
+    
+    <script>
+        let jasonres='{"fact":"The oldest cat on record was Cr\u00e8me Puff from Austin, Texas, who lived from 1967 to August 6, 2005, three days after her 38th birthday. A cat typically can live up to 20 years, which is equivalent to about 96 human years.","length":220}'
+        // console.log(jasonres.fact);//if use this line show error beacuse json formate javascript not access this object
+
+        let validResponse=JSON.parse(jasonres);
+        console.log(validResponse.fact);
+
+    </script>
+</body>
+</html>

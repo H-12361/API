@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>async function</title>
+</head>
+<body>
+    <h1> get random fact </h1>
+    <button> click me</button>
+    <p id="result"></p>
+
+   <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+   <!-- //axios cdn use to direclty data read but fatch mehtod we can pass and covert into redable  -->
+    <script>
+        // let url ="https://catfact.ninja/fact";
+        // try{
+        //   async function getFact(){
+        //    let Response= await fetch(url);//this code remove using axios
+        //    let data = await Response.json();
+           
+        //    console.log(data.fact);
+        //  }
+        //  } catch(err){
+        //   console.log("error:-" ,err);
+
+        //  }
+        let btn=document.querySelector("button");{
+          btn.addEventListener("click",async()=>{
+            let  fact=  await getFact();
+            console.log(fact);
+            let result=document.getElementById("result");
+            result.innerText=fact
+
+          })
+        }
+       let url ="https://catfact.ninja/fact";
+         async function getFact() {
+          try{
+         let res = await axios.get(url);
+          return res.data.fact 
+        }
+         catch(err){
+          console.log("error is :",err);
+          return " Data not Fount";
+        }
+      }
+      
+         
+
+    </script>
+</body>
+</html>

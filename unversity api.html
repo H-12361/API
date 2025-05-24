@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University detial</title>
+</head>
+<body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+ <script>
+    let name ="usa";
+let url="https://cors-anywhere.herokuapp.com/http://universities.hipolabs.com/search?name=";
+
+async function getcollage(params){
+    try{
+        let result= await axios.get(url+name);
+        console.log(result);
+    }
+    catch(err){
+        console.log("error is :", err);
+
+    }
+
+
+
+
+} 
+    
+
+
+ </script>
+</body>
+</html>
